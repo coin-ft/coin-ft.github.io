@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Multimodal data collection including force allows robots to learn compliant behavior.">
+  <meta name="keywords" content="Multimodal learning, imitation learning, force/torque sensing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In-the-Wild Compliant Manipulation with UMI-FT</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">In-the-Wild Compliant Manipulation with UMI-FT</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.hojungchoi.com/">Hojung Choi</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yifan-hou.github.io/">Yifan Hou</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://chuerpan.com/">Chuer Pan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/seongheon/">Seongheon Hong</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://austinapatel.github.io/">Austin Patel</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xxm19.github.io/">Xiaomeng Xu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://bdml.stanford.edu/pmwiki/pmwiki.php/Profiles/MarkCutkosky">Mark Cutkosky</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://shurans.github.io/">Shuran Song</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Stanford University</span>
+            <span class="co-first-author">* Equal Contribution.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="umift teaser">
+  <div class="container is-max-desktop">
+    <div class="umift-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/umift_teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        UMI-FT allows multi-modal imitation learning using a modified adaptive compliance policy.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Many manipulation tasks require careful force
+            modulation. With insufficient force the task may fail, while
+            excessive force could cause damage. The high cost, bulky size
+            and fragility of commercial force/torque (F/T) sensors have
+            limited large-scale, force-aware policy learning. We introduce
+            UMI-FT, a handheld data-collection platform that mounts
+            compact, six-axis force/torque sensors on each finger, enabling
+            finger-level wrench measurements alongside RGB, depth, and
+            pose. Using the multimodal data collected from this device,
+            we train an adaptive compliance policy that predicts position
+            targets, grasp force, and stiffness for execution on standard
+            compliance controllers. In evaluations on three contact-rich,
+            force-sensitive tasks (whiteboard wiping, skewering zucchini,
+            and lightbulb insertion), UMI-FT enables policies that reliably
+            regulate external contact forces and internal grasp forces,
+            outperforming baselines that lack compliance or force sensing.
+            UMI-FT offers a scalable path to learning compliant manip-
+            ulation from in-the-wild demonstrations.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <!-- <iframe src="https://youtu.be/0JBRM8wArsY"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          <iframe width="1266" height="712" src="https://www.youtube.com/embed/0JBRM8wArsY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+
+    <!-- Hardware Introduction. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">UMI-FT System Design</h2>
+        <div class="publication-video">
+          <!-- "Q: is this the desired class?"  -->
+          <video id="system_design" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/umift_system_design.mp4"
+                    type="video/mp4">
+          </video>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Hardware Introduction. -->
+
+    
+  </div>
+</section>
+
+
+
+
+<section class="section is-light"> <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Evaluations</h2>
+        </div>
+    </div>
+
+
+  <!-- Whiteboard Wiping -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Task 1: Whiteboard Wiping</h2>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <video id="whiteboard_wiping_ours" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/wbw_ours.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Our Method</p>
+      </div>
+        
+      <div class="column">
+        <video id="whiteboard_wiping_baseline" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/wbw_baseline.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Baselines</p>
+      </div>
+    </div>
+  <!-- Whiteboard Wiping -->
+
+
+  <!-- Zucchini -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Task 2: Skewer Zucchini</h2>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <video id="skewer_zucchini_ours" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/zucchini_ours.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Our Method</p>
+      </div>
+        
+      <div class="column">
+        <video id="skewer_zucchini_baseline" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/zucchini_baseline.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Baselines</p>
+      </div>
+    </div>
+  <!-- Zucchini -->
+
+
+  <!-- Lightbulb Insertion -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Task 3: Lightbulb Insertion</h2>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column">
+        <video id="lightbulb_insertion_ours" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/bulb_ours.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Our Method</p>
+      </div>
+        
+      <div class="column">
+        <video id="lightbulb_insertion_baseline" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/bulb_baseline.mp4" type="video/mp4">
+        </video>
+        <p class="has-text-centered">Baselines</p>
+      </div>
+    </div>
+  <!-- Lightbulb Insertion -->
+
+
+
+  
+</section>
+
+
+
+  
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
