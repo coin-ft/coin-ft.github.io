@@ -181,24 +181,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Many manipulation tasks require careful force
-            modulation. With insufficient force the task may fail, while
-            excessive force could cause damage. The high cost, bulky size
-            and fragility of commercial force/torque (F/T) sensors have
-            limited large-scale, force-aware policy learning. We introduce
-            UMI-FT, a handheld data-collection platform that mounts
-            compact, six-axis force/torque sensors on each finger, enabling
-            finger-level wrench measurements alongside RGB, depth, and
-            pose. Using the multimodal data collected from this device,
-            we train an adaptive compliance policy that predicts position
-            targets, grasp force, and stiffness for execution on standard
-            compliance controllers. In evaluations on three contact-rich,
-            force-sensitive tasks (whiteboard wiping, skewering zucchini,
-            and lightbulb insertion), UMI-FT enables policies that reliably
-            regulate external contact forces and internal grasp forces,
-            outperforming baselines that lack compliance or force sensing.
-            UMI-FT offers a scalable path to learning compliant manip-
-            ulation from in-the-wild demonstrations.
+            We introduce CoinFT, a capacitive 6-axis force/torque (F/T) sensor that is compact, light, low-cost, 
+            and robust with an average mean-squared error of 0.11N for force and 0.84mNm for moment when the input 
+            ranges from 0∼10N and 0∼4N in normal and shear directions, respectively. CoinFT is a stack of two rigid PCBs 
+            with comb-shaped electrodes connected by an array of silicone rubber pillars. 
+            The microcontroller interrogates the electrodes in different subsets in order to enhance sensitivity 
+            for measuring 6-axis F/T. The combination of desirable features of CoinFT enables various contact-rich 
+            robot interactions at a scale, across different embodiment domains including drones, robot end-effectors, and wearable haptic devices. 
+            We demonstrate the utility of CoinFT on drones by performing an attitude-based force control to perform tasks that require 
+            careful contact force modulation. 
           </p>
         </div>
       </div>
